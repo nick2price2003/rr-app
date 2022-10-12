@@ -12043,18 +12043,16 @@ span.flatpickr-weekday {
 .card{
   border: 1px solid black;
   background-color: white;
-  width: 200px;
+  width: 80px;
   height: 80px;
-  cursor: pointer;
-  position: absolute;
 }
 .card p{
+  font-size: 10px;
   width: 30vw;
 }
 .addForm{
   height: 50vh;
   width: 50vw;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12062,13 +12060,10 @@ span.flatpickr-weekday {
   position: absolute;
   top: 25%;
   left: 25%;
-  border: 1px solid;
-  z-index: 999;
 }
 .addForm form{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column; 
-  width: 80%;
 }

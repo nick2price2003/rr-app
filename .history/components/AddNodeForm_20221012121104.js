@@ -24,7 +24,7 @@ export default function AddNodeForm({ setAddItem, addItem, tasks, setTasks }) {
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          type='text'
+          type='textarea'
           placeholder='Description'
           className="form-control mb-3"
           onChange={(e) => setDescription(e.target.value)}

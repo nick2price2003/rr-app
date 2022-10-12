@@ -63,6 +63,9 @@ export default function Home() {
             <div className='container-fluid p-0'>
               <div className='row'>
                 <div className='col-12 d-flex'>
+                  {tasks.map((e) => (
+                    <Card currentTask={e} tasks={tasks} addTask={addTask} />
+                  ))}
                   <div className='w-100'>
                     <h1 className='h3 mb-3'>
                       {addItem && (
@@ -80,9 +83,6 @@ export default function Home() {
               </div>
               <div className='row'>
                 <div className='col-12 d-flex'>
-                  {tasks.map((e) => (
-                    <Card currentTask={e} tasks={tasks} addTask={addTask} />
-                  ))}
                   <div className='w-100'>
                     <div className='floor-plan'>
                       <img src='/images/floor2.png' alt='' />

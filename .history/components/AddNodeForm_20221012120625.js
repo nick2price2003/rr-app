@@ -26,7 +26,7 @@ export default function AddNodeForm({ setAddItem, addItem, tasks, setTasks }) {
         <input
           type='text'
           placeholder='Description'
-          className="form-control mb-3"
+          className="form-control"
           onChange={(e) => setDescription(e.target.value)}
         />
         <button type='submit' className="btn btn-primary">Add</button>

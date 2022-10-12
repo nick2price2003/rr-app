@@ -1,25 +1,12 @@
-/* eslint-disable react/jsx-key */
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 
 import Head from "next/head";
 import Draggable from "react-draggable";
 import ContextMenu from "../components/ContextMenu";
-import AddNodeForm from "../components/AddNodeForm";
-import Card from "../components/Card";
 
 export default function Home() {
-  const [addItem, setAddItem] = useState(false);
-  const [tasks, setTasks] = useState([]);
-  const addTask = (task) => {
-    setTasks(task);
-  };
-  const handleSubmit = () => {
-    setAddItem(!addItem);
-  };
-
   const handleAddNode = () => {
-    document.getElementById("node-container").innerHTML +=
-      "<div class='node-box'>";
+    document.getElementById("node-container").innerHTML += "<div class='node-box'>";
   };
   return (
     <div>
@@ -30,7 +17,7 @@ export default function Home() {
       </Head>
 
       <div className='wrapper'>
-        {/*  <ContextMenu handleAddNode={handleAddNode} /> */}
+        <ContextMenu  handleAddNode={handleAddNode} />
         <nav id='sidebar' className='sidebar js-sidebar'>
           <div className='sidebar-content js-simplebar'>
             <a className='sidebar-brand' href='index.html'>
@@ -52,12 +39,9 @@ export default function Home() {
 
         <div className='main'>
           <nav className='navbar navbar-expand navbar-light navbar-bg'>
-            <button
-              onClick={handleSubmit}
-              className='addButton btn btn-primary'
-            >
-              Add Node
-            </button>
+            <a className='sidebar-toggle js-sidebar-toggle'>
+              <i className='hamburger align-self-center'></i>
+            </a>
           </nav>
           <main className='content'>
             <div className='container-fluid p-0'>
@@ -65,14 +49,6 @@ export default function Home() {
                 <div className='col-12 d-flex'>
                   <div className='w-100'>
                     <h1 className='h3 mb-3'>
-                      {addItem && (
-                        <AddNodeForm
-                          addItem={addItem}
-                          setAddItem={setAddItem}
-                          tasks={tasks}
-                          setTasks={addTask}
-                        />
-                      )}
                       <strong>Factory</strong> Floor
                     </h1>
                   </div>
@@ -80,12 +56,12 @@ export default function Home() {
               </div>
               <div className='row'>
                 <div className='col-12 d-flex'>
-                  {tasks.map((e) => (
-                    <Card currentTask={e} tasks={tasks} addTask={addTask} />
-                  ))}
                   <div className='w-100'>
                     <div className='floor-plan'>
-                      <img src='/images/floor2.png' alt='' />
+                      <img src="/images/floor2.pns"
+                      <Draggable>
+                        <div id='node-container' />
+                      </Draggable>
                     </div>
                   </div>
                 </div>

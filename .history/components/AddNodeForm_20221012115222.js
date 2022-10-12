@@ -4,12 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 export default function AddNodeForm({ setAddItem, addItem, tasks, setTasks }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [show, setShow] = useState(False);
+  const handleClose = () => setShow(False);
+  const handleShow = () => setShow(True);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let newTask = {
       id: uuidv4(),
       name: name,
       description: description,
+      timeline: option,
     };
     setTasks([...tasks, newTask]);
     setAddItem(!addItem);
@@ -20,16 +25,14 @@ export default function AddNodeForm({ setAddItem, addItem, tasks, setTasks }) {
         <input
           type='text'
           placeholder='Name'
-          className="form-control mb-3"
           onChange={(e) => setName(e.target.value)}
         />
         <input
           type='text'
           placeholder='Description'
-          className="form-control mb-3"
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button type='submit' className="btn btn-primary">Add</button>
+        <button type='submit'>Add</button>
       </form>
     </div>
   );

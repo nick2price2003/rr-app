@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React, { useRef, useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -80,12 +79,17 @@ export default function Home() {
               </div>
               <div className='row'>
                 <div className='col-12 d-flex'>
-                  {tasks.map((e) => (
-                    <Card currentTask={e} tasks={tasks} addTask={addTask} />
-                  ))}
                   <div className='w-100'>
                     <div className='floor-plan'>
                       <img src='/images/floor2.png' alt='' />
+                      {tasks
+                        .map((e) => (
+                          <Card
+                            currentTask={e}
+                            tasks={tasks}
+                            addTask={addTask}
+                          />
+                        ))}
                     </div>
                   </div>
                 </div>

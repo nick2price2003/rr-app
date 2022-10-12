@@ -2,7 +2,7 @@ import Draggable from "react-draggable";
 
 export default function Card({ currentTask, tasks, addTask }) {
   return (
-    <Draggable>
+    <Draggable bounds='parent'>
       <div className='card' key={currentTask.id}>
         <div className='heading'>
           <div className='container'>
