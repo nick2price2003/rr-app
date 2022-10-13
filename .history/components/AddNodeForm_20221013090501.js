@@ -43,8 +43,8 @@ export default function AddNodeForm({ setAddItem, addItem, tasks, setTasks }) {
           <option value=''>Station Id</option>
           <option value='020-000'>020-000</option>
           <option value='021-010'>021-010</option>
-          <option value='040-010'>040-010</option>
-          <option value='050-010'>050-010</option>
+          <option value='done'>040-010</option>
+          <option value='done'>050-010</option>
         </select>
         <button type='submit' className='btn btn-primary'>
           Add

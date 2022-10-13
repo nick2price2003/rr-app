@@ -1,7 +1,6 @@
 import Draggable from "react-draggable";
 
 export default function Card({ currentTask, tasks, addTask }) {
-  console.log(currentTask);
   return (
     <Draggable>
       <div className='card' key={currentTask.id}>
@@ -31,7 +30,7 @@ export default function Card({ currentTask, tasks, addTask }) {
                 <p>{currentTask.description}</p>
               </div>
               <div className='col-12'>
-                <p>{currentTask.stationid}</p>
+                <p>{currentTask.stationId}</p>
               </div>
             </div>
           </div>
